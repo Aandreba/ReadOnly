@@ -1,2 +1,2 @@
-# ReadOnlyList
-Read only wrapper for Java Lists
+# ReadOnly
+Wrapper for Java read only objects
