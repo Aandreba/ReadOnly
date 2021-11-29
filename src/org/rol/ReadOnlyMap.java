@@ -28,8 +28,8 @@ public abstract class ReadOnlyMap<K,V> extends AbstractMap<K,V> {
     protected abstract Set<Entry<K,V>> defaultEntrySet ();
 
     @Override
-    final public Set<Entry<K, V>> entrySet() {
-        return new AbstractSet<>() {
+    final public ReadOnlySet<Entry<K, V>> entrySet() {
+        return new ReadOnlySet<>() {
             final private Set<Entry<K,V>> parent = defaultEntrySet();
 
             @Override
@@ -136,5 +136,12 @@ public abstract class ReadOnlyMap<K,V> extends AbstractMap<K,V> {
     @Override
     final public V merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction) {
         throw new UnsupportedOperationException();
+    }
+
+    abstract class ReadOnlyEntry<K,V> implements Entry<K,V> {
+        @Override
+        final public V setValue(V value) {
+            throw new UnsupportedOperationException();
+        }
     }
 }
