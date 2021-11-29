@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ReadOnlyList:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ReadOnlyList_jar</output-path>
+    <root id="archive" name="ReadOnlyList.jar">
+      <element id="module-output" name="ReadOnlyList" />
+    </root>
+  </artifact>
+</component>
